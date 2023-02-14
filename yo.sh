@@ -9,5 +9,5 @@ function yo() {
         N=1
         str="$*"
     fi
-    python $yodir/yo.py --N=$N --query="""$str"""
+    python3 $yodir/yo.py --N=$N --query="""$str"""
 }
