@@ -34,7 +34,7 @@ ffmpeg -ss 5 -i input.avi -t 20 -c copy output.mp4
 You can also ask `yo` to give multiple suggestions by passing the `N <num>` argument:
 
 ```
-➜  ~ yo N 3 print all filenames of files whose contains contains the string 'yes'
+➜  ~ yo N 3 print all filenames of files whose contents contains the string 'yes'
 
 Suggested commands:
 
@@ -46,6 +46,8 @@ grep -R "yes" *
 ```
 
 ## Installation
+
+You will need python3 with the `requests` library installed (`pip3 install requests`).
 
 1. Get an OpenAI secret key. You can get one with $18 free credit by signing up at https://openai.com/api/.
 2. Clone this repository.
