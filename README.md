@@ -39,7 +39,7 @@ Or maybe with FFMPEG?
 
 Suggested command:
 
-ffmpeg -ss 5 -i input.avi -t 20 -c copy output.mp4
+ffmpeg -i input.avi -ss 5 -t 20 -c:v libx264 -c:a aac -strict -2 output.mp4
 ```
 
 You can also ask `yo` to give multiple suggestions by passing the `N <num>` argument:
