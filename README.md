@@ -2,7 +2,7 @@
 
 *open source project, inspired by HeyCLI.com*
 
-## `yo` lets you find the the CLI command you are looking for by asking it in natural language 
+## `yo` lets you find the the CLI command you are looking for by asking in natural language 
 
 ### Examples
 
