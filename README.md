@@ -15,12 +15,24 @@ kill -9 <PID>
 ```
 
 ```
-➜  ~ yo list all files in the dir, showing their size in human-readable format
+➜  ~ yo find all files containing the string 'nlml' and concatenate their contents into nlml.txt
 
 Suggested command:
 
-ls -lh
+grep -r "nlml" * > nlml.txt
 ```
+
+Or even more complicated:
+
+``` 
+➜  ~ yo find all files containing the string 'nlml' and concatenate their contents into nlml.txt, separated by three pipes '|' and another newline
+
+Suggested command:
+
+grep -r nlml * | awk -F: '{print $2}' | paste -sd '|||\n' > nlml.txt
+```
+
+Or maybe with FFMPEG?
 
 ```
 ➜  ~ yo reencode the video input.avi to mp4, starting from 5 seconds and ending at 25 seconds
@@ -29,7 +41,6 @@ Suggested command:
 
 ffmpeg -ss 5 -i input.avi -t 20 -c copy output.mp4
 ```
-
 
 You can also ask `yo` to give multiple suggestions by passing the `N <num>` argument:
 
