@@ -29,7 +29,7 @@ Or even more complicated:
 
 Suggested command:
 
-grep -r nlml * | awk -F: '{print $2}' | paste -sd '|||\n' > nlml.txt
+grep -rl nlml . | xargs -I % sh -c 'cat % | sed "s/$/\n|||\n/" >> nlml.txt'
 ```
 
 Or maybe with FFMPEG?
