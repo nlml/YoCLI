@@ -2,7 +2,7 @@
 
 *open source project, inspired by HeyCLI.com*
 
-## `yo` lets you express in natural language the CLI command you are looking for
+## `yo` lets you find the the CLI command you are looking for by asking in natural language 
 
 ### Examples
 
@@ -15,21 +15,32 @@ kill -9 <PID>
 ```
 
 ```
-➜  ~ yo list all files in the dir, showing their size in human-readable format
+➜  ~ yo find all files containing the string 'nlml' and concatenate their contents into nlml.txt
 
 Suggested command:
 
-ls -lh
+grep -r "nlml" * > nlml.txt
 ```
+
+Or even more complicated:
+
+``` 
+➜  ~ yo find all files containing the string 'nlml' and concatenate their contents into nlml.txt, separated by three pipes '|' and another newline
+
+Suggested command:
+
+grep -rl nlml . | xargs -I % sh -c 'cat % | sed "s/$/\n|||\n/" >> nlml.txt'
+```
+
+Or maybe with FFMPEG?
 
 ```
 ➜  ~ yo reencode the video input.avi to mp4, starting from 5 seconds and ending at 25 seconds
 
 Suggested command:
 
-ffmpeg -ss 5 -i input.avi -t 20 -c copy output.mp4
+ffmpeg -i input.avi -ss 5 -t 20 -c:v libx264 -c:a aac -strict -2 output.mp4
 ```
-
 
 You can also ask `yo` to give multiple suggestions by passing the `N <num>` argument:
 
