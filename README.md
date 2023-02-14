@@ -47,6 +47,8 @@ grep -R "yes" *
 
 ## Installation
 
+You will need python3 with the `requests` library installed (`pip3 install requests`).
+
 1. Get an OpenAI secret key. You can get one with $18 free credit by signing up at https://openai.com/api/.
 2. Clone this repository.
 3. Add these two lines to your `.bashrc` (or `.zshrc`, or equivalent):
