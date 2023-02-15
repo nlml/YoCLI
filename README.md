@@ -76,7 +76,3 @@ Currently `text-davinci-003` is the default model used. Requests tend to use abo
 ## Contributing
 
 Just make a PR :)
-
-## Todo
-
-Rewrite the whole thing in pure bash.
