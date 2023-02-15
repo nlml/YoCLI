@@ -54,7 +54,11 @@ if __name__ == "__main__":
     prompt += f"\nHi, what command should I run in terminal to {args.query}?\n\nThis command should do it:\n```\n"
     response = openai_request(prompt, oai_key, n=args.N, stop="```")
     resp_json = response.json()
-    texts = [i["text"] for i in resp_json["choices"]]
+    try:
+        texts = [i["text"] for i in resp_json["choices"]]
+    except Exception as e:
+        print(f"response from OpenAI:\n{resp_json}")
+        raise e
     print()
     plural = "s" if args.N > 1 else ""
     print(f"Suggested command{plural}:\n")
